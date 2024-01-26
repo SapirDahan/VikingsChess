@@ -5,7 +5,7 @@ public abstract class ConcretePiece implements Piece{
     private Player owner;
     private String type;
     private boolean alive = true;
-    private List<Position> historyMoves = new ArrayList<Position>();
+    private List<Position> historyMoves = new ArrayList<>();
     private String name = "";
     private int killed = 0;
     private int distance = 0;
@@ -53,14 +53,14 @@ public abstract class ConcretePiece implements Piece{
     //Remove the last move from the memory of the history moves
     public void deleteLastMove(){
         if(!historyMoves.isEmpty()){
-            historyMoves.removeLast();
+            historyMoves.remove(historyMoves.size() - 1);
         }
     }
 
     //Get the position the piece is currently on
     public Position getPosition(){
         if(!historyMoves.isEmpty()){
-            return historyMoves.getLast();
+            return historyMoves.get(historyMoves.size() - 1);
         }
         return null;
     }
