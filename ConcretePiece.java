@@ -5,7 +5,7 @@ public abstract class ConcretePiece implements Piece{
     private Player owner;
     private String type;
     private boolean alive = true;
-    private List<Position> historyMoves = new ArrayList<>();
+    private List<Position> historyMoves = new ArrayList<Position>();
     private String name = "";
     private int killed = 0;
     private int distance = 0;
