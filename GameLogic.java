@@ -175,7 +175,7 @@ public class GameLogic implements PlayableLogic{
 
             //Find the piece at location a
             for(ConcretePiece p : allPieces){
-                if(samePosition(p.getPosition(), a)){
+                if(samePosition(p.getPosition(), a) && p.isAlive()){
                     p.addMove(b);
                     board[b.getCol()][b.getRow()].addToSet(p); //Adding a piece for the position history set
                     break; //Only one to find no need to continue search
@@ -193,7 +193,7 @@ public class GameLogic implements PlayableLogic{
                 findDeadPawnAtMove(b);
             }
 
-            //Save to move
+            //Save the move
             saveMove();
 
             //If the game finished print the information on that game
